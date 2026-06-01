@@ -55,7 +55,7 @@ This extension was not part of the course. It represents my independent decision
 - Product grid with real-time search → filter → results pulled from the API
 - Sidebar: dietary filter pills, price range slider, store selector, AI Picks toggle
 - Budget bar — live cost breakdown appears as items are added to cart
-- **AI chatbot** — Claude-powered assistant that knows the product catalog, understands dietary requirements, and can answer questions like *"what can I cook halal and gluten-free under $15?"*
+- **AI chatbot** — Claude API integration (requires Anthropic API key, see setup)
 
 > The chatbot requires an Anthropic API key. In production, proxy the request through your backend so the key stays server-side. See setup below.
 
