@@ -55,9 +55,7 @@ This extension was not part of the course. It represents my independent decision
 - Product grid with real-time search → filter → results pulled from the API
 - Sidebar: dietary filter pills, price range slider, store selector, AI Picks toggle
 - Budget bar — live cost breakdown appears as items are added to cart
-- **AI chatbot** — Claude-powered assistant that knows the product catalog, understands dietary requirements, and can answer questions like *"what can I cook halal and gluten-free under $15?"*
-
-> The chatbot requires an Anthropic API key. In production, proxy the request through your backend so the key stays server-side. See setup below.
+- **AI chatbot** — Claude-powered chat is available when an Anthropic API key is configured. Without the key, the core search, filtering, and budget features still run locally. When active, the assistant knows the full product catalog and can answer questions like *"what can I cook halal and gluten-free under $15?"*
 
 ---
 
@@ -132,7 +130,7 @@ npm run dev
 # frontend/.env.local
 VITE_API_URL=    # leave blank for local dev
 ```
-The chatbot calls the Anthropic API directly in development. For production, move the API call to your backend.
+Claude-powered chat is available when an Anthropic API key is configured. Without it, all other features — search, filters, budget — work fully. For production, proxy the API call through your backend to keep the key server-side.
 
 ### Tests
 ```bash
