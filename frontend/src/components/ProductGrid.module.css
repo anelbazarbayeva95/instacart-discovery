@@ -1,0 +1,153 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  background: #fff;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--gray2);
+  overflow: hidden;
+  transition: border-color 0.15s, transform 0.12s;
+}
+
+.card:hover {
+  border-color: var(--gray3);
+  transform: translateY(-1px);
+}
+
+.aiCard { border-color: #F59E0B; }
+.aiCard:hover { border-color: #D97706; }
+
+.imgWrap {
+  height: 110px;
+  background: var(--gray1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.emoji { font-size: 52px; }
+
+.tags {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.tag {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 5px;
+  border-radius: var(--r-sm);
+  background: rgba(255,255,255,0.92);
+  border: 1px solid var(--gray2);
+  color: var(--gray5);
+}
+
+.tagAi { background: #FFF8E6; color: #92400E; border-color: #F59E0B; }
+.tag_halal { background: #E8F5E9; color: #2E7D32; border-color: #A5D6A7; }
+.tag_vegan { background: #F3E5F5; color: #6A1B9A; border-color: #CE93D8; }
+.tag_gluten_free { background: #FFF3E0; color: #E65100; border-color: #FFCC80; }
+
+.body { padding: 10px 12px; }
+
+.store {
+  font-size: 11px;
+  color: var(--gray4);
+  margin-bottom: 2px;
+}
+
+.name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--dark);
+  line-height: 1.35;
+  margin-bottom: 8px;
+  min-height: 34px;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.qtyControl {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.qty {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dark);
+  min-width: 16px;
+  text-align: center;
+}
+
+.qtyBtn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gray2);
+  background: #fff;
+  color: var(--gray5);
+  font-size: 14px;
+  line-height: 1;
+  transition: border-color 0.12s;
+}
+
+.qtyBtn:hover { border-color: var(--g); color: var(--g); }
+
+.addBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--g);
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.12s;
+}
+
+.addBtn:hover { background: var(--g-mid); }
+.addBtn.added { background: var(--g-mid); }
+
+.skeleton {
+  height: 200px;
+  background: var(--gray2);
+  border-radius: var(--r-lg);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.empty {
+  grid-column: 1 / -1;
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--gray4);
+}
+
+.emptyIcon { font-size: 40px; margin-bottom: 12px; }
+.emptyHint { font-size: 13px; margin-top: 6px; }

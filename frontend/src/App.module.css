@@ -1,0 +1,39 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  flex: 1;
+}
+
+.main {
+  padding: 16px 20px 100px;
+}
+
+.chatFab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--dark);
+  color: #fff;
+  border: none;
+  border-radius: var(--r-pill);
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 200;
+  transition: background 0.15s, transform 0.1s;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+
+.chatFab:hover {
+  background: #3a3b40;
+  transform: translateY(-1px);
+}

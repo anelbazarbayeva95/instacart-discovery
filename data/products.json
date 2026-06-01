@@ -1,0 +1,22 @@
+[
+  {"id": 1, "name": "Whole Wheat Bread", "store": "ShopRite", "price": 3.49, "tags": ["vegan"], "category": "bakery", "emoji": "🍞", "description": "Stone-ground whole wheat, soft sandwich loaf"},
+  {"id": 2, "name": "Halal Ground Beef 1lb", "store": "ShopRite", "price": 6.99, "tags": ["halal"], "category": "meat", "emoji": "🥩", "description": "Certified halal, 80/20 blend"},
+  {"id": 3, "name": "Basmati Rice 5lb", "store": "Food Bazar", "price": 8.49, "tags": ["halal", "vegan", "gluten-free"], "category": "grain", "emoji": "🌾", "description": "Long-grain aged basmati"},
+  {"id": 4, "name": "Organic Almond Milk", "store": "Whole Foods", "price": 4.99, "tags": ["vegan", "gluten-free"], "category": "dairy-alt", "emoji": "🥛", "description": "Unsweetened, 32oz carton"},
+  {"id": 5, "name": "Halal Chicken Breast", "store": "Food Bazar", "price": 9.99, "tags": ["halal", "gluten-free"], "category": "meat", "emoji": "🍗", "description": "Boneless skinless, 2lb pack"},
+  {"id": 6, "name": "Gluten-Free Pasta", "store": "Whole Foods", "price": 3.79, "tags": ["vegan", "gluten-free"], "category": "pasta", "emoji": "🍝", "description": "Brown rice penne, 12oz"},
+  {"id": 7, "name": "Palm Nut Soup", "store": "Food Bazar", "price": 4.29, "tags": ["halal", "gluten-free"], "category": "soup", "emoji": "🥘", "description": "Traditional West African style, 15oz can"},
+  {"id": 8, "name": "Greek Yogurt Plain", "store": "ShopRite", "price": 2.99, "tags": ["gluten-free"], "category": "dairy", "emoji": "🫙", "description": "2% fat, 16oz tub"},
+  {"id": 9, "name": "Tahini Paste", "store": "Whole Foods", "price": 6.49, "tags": ["vegan", "gluten-free"], "category": "condiment", "emoji": "🥣", "description": "100% ground sesame seeds, 16oz"},
+  {"id": 10, "name": "Quinoa Organic", "store": "Target", "price": 7.29, "tags": ["vegan", "gluten-free"], "category": "grain", "emoji": "🌿", "description": "White quinoa, 1lb bag"},
+  {"id": 11, "name": "Halal Beef Burgers", "store": "ShopRite", "price": 8.99, "tags": ["halal", "gluten-free"], "category": "meat", "emoji": "🍔", "description": "4-pack, 1/4lb patties"},
+  {"id": 12, "name": "Coconut Aminos", "store": "Target", "price": 5.49, "tags": ["vegan", "gluten-free"], "category": "condiment", "emoji": "🧴", "description": "Soy sauce alternative, 8oz"},
+  {"id": 13, "name": "Sourdough Loaf", "store": "Whole Foods", "price": 5.99, "tags": ["vegan"], "category": "bakery", "emoji": "🥖", "description": "Naturally leavened, whole wheat"},
+  {"id": 14, "name": "Low-Sodium Chicken Broth", "store": "ShopRite", "price": 2.49, "tags": ["gluten-free"], "category": "soup", "emoji": "🫗", "description": "32oz carton, <140mg sodium"},
+  {"id": 15, "name": "Tempeh Organic", "store": "Whole Foods", "price": 3.99, "tags": ["vegan", "gluten-free"], "category": "protein", "emoji": "🟫", "description": "Plain fermented soy, 8oz"},
+  {"id": 16, "name": "Brown Rice Cakes", "store": "Target", "price": 2.79, "tags": ["vegan", "gluten-free"], "category": "snack", "emoji": "🍘", "description": "Lightly salted, 4.9oz bag"},
+  {"id": 17, "name": "Lentil Soup", "store": "Food Bazar", "price": 3.19, "tags": ["halal", "vegan", "gluten-free"], "category": "soup", "emoji": "🍲", "description": "Ready to serve, 15oz"},
+  {"id": 18, "name": "Chickpeas Canned", "store": "ShopRite", "price": 1.49, "tags": ["halal", "vegan", "gluten-free"], "category": "protein", "emoji": "🫘", "description": "No salt added, 15oz can"},
+  {"id": 19, "name": "Olive Oil Extra Virgin", "store": "Whole Foods", "price": 9.99, "tags": ["vegan", "gluten-free", "halal"], "category": "condiment", "emoji": "🫒", "description": "Cold-pressed, 16.9oz bottle"},
+  {"id": 20, "name": "Frozen Halal Lamb", "store": "Food Bazar", "price": 12.99, "tags": ["halal", "gluten-free"], "category": "meat", "emoji": "🐑", "description": "Bone-in shoulder, 2lb"}
+]
