@@ -36,8 +36,7 @@ A moderated usability study conducted with 8 participants across 40–50 minute 
 
 → [`research/FINDINGS.md`](research/FINDINGS.md) — all 8 findings with participant quotes and evidence  
 → [`research/METHODOLOGY.md`](research/METHODOLOGY.md) — recruitment, session plan, analysis approach  
-→ [`research/Instacart_Usability_Study_Final.pdf`](research/Instacart Presentation.pdf) — presentation deck  
-
+→ [`research/Instacart Presentation.pdf`](research/Instacart%20Presentation.pdf) — final presentation deck
 
 ### Part 2 — The Engineering Extension (Solo, Anel Bazarbayeva)
 
