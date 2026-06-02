@@ -13,11 +13,10 @@
 ---
 ## 🎥 Interactive Concept Preview
 
-This 30-second prototype demonstrates the intended AI-assisted grocery discovery experience, inspired by findings from a usability study of 8 Instacart shoppers.
+This 30-second prototype demonstrates the intended AI-assisted grocery discovery experience.
 
-⚠️ This is a high-fidelity concept prototype. Backend search, filtering, and budget estimation are implemented. Full Claude-powered conversational functionality is planned as a future enhancement.
-
-[Watch AI Assistant Concept Preview](screenshots/ai-assistant-concept-preview.mov)
+📹 Concept Preview Video:
+[screenshots/ai-assistant-concept-preview.mov](screenshots/ai-assistant-concept-preview.mov)
 
 ## Two Parts to This Project
 
@@ -46,7 +45,7 @@ After the course ended, I built a working prototype to implement what the resear
 | Search dependency | Natural-language product search using TF-IDF similarity |
 | Platform wasn't built for everyone | AI chatbot aware of dietary needs and cultural food queries |
 
-This extension was not part of the course. It represents my independent decision to take research findings and ship them as code.
+This engineering extension was completed independently after the course concluded.
 
 ---
 
@@ -107,8 +106,8 @@ This concept shows how users can ask natural-language grocery questions and rece
 ### Mobile Discovery Experience
 
 <p align="center">
-  <img src="screenshots/mobile-discovery.png" width="320">
-</p>
+  <img src="screenshots/mobile-discovery.png" width="180">
+</p> 
 
 ### Prototype Overview
 
@@ -116,11 +115,6 @@ This concept shows how users can ask natural-language grocery questions and rece
   <img src="screenshots/prototype-overview.png" width="700">
 </p>
 
-### Interactive Concept Preview
-
-This video demonstrates the intended AI Grocery Assistant experience as a high-fidelity concept preview. The backend search, filters, and budget estimator are implemented; full Claude-powered chat is planned as a future enhancement.
-
-[Watch AI Assistant Concept Preview](screenshots/ai-assistant-concept-preview.mov)
 
 ---
 
