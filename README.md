@@ -18,8 +18,11 @@
 | **Stack** | Python · FastAPI · scikit-learn · React 18 · Vite · Claude API |
 
 ---
+
 ## 🎥 Interactive Concept Preview
+
 [Watch the 30-second concept preview](https://drive.google.com/file/d/1tUpi1GYBu3C0GgBaXUeNgv8Lk2hF-HKq/view?usp=sharing)
+
 This prototype demonstrates how research findings were translated into an AI-assisted grocery discovery experience focused on search, dietary filtering, and budget transparency.
 
 ## Two Parts to This Project
@@ -65,7 +68,8 @@ This engineering extension was completed independently after the course conclude
 - Product grid with real-time search → filter → results pulled from the API
 - Sidebar: dietary filter pills, price range slider, store selector, AI Picks toggle
 - Budget bar — live cost breakdown appears as items are added to cart
-- **AI chat interface** — Supports an optional Claude-powered experience when an Anthropic API key is configured. The interface is designed for dietary, cultural, nutritional, and budget-based grocery discovery.
+- AI chat interface — Supports an optional Claude-powered experience when an Anthropic API key is configured. The interface is designed for dietary, cultural, nutritional, and budget-based grocery discovery.
+  
 ---
 
 ## Key Research Findings
@@ -88,7 +92,7 @@ This is a working research-driven prototype, not a production Instacart integrat
 
 ---
 
-## Screenshots & Concept Preview
+## Screenshots 
 
 ### AI-Assisted Grocery Discovery
 
@@ -112,12 +116,7 @@ Research participants evaluated affordability using total delivered cost rather 
   <img src="screenshots/mobile-discovery.png" width="180">
 </p> 
 
-### Prototype Overview
-
-<p align="center">
-  <img src="screenshots/prototype-overview.png" width="700">
-</p>
-
+The mobile concept adapts conversational product discovery, dietary filtering, and budget awareness for a grocery shopping workflow on smaller screens.
 
 ---
 
