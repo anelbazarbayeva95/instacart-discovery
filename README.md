@@ -1,4 +1,10 @@
 # AI-Assisted Grocery Discovery
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)
+![UX Research](https://img.shields.io/badge/UX%20Research-6C63FF)
+![AI Discovery](https://img.shields.io/badge/AI%20Discovery-FF6B6B)
+![Accessibility](https://img.shields.io/badge/Accessibility-WCAG-green)
 **UX Research → Findings → Figma Redesign → Working Prototype → Interactive AI Demo**
 
 > A usability study of 8 Instacart shoppers revealed that the platform creates barriers for users with dietary, cultural, and budget constraints. This repo documents the research — and the working product I built from its findings.
@@ -13,6 +19,7 @@
 ---
 ## 🎥 Interactive Concept Preview
 [Watch the 30-second concept preview](https://drive.google.com/file/d/1tUpi1GYBu3C0GgBaXUeNgv8Lk2hF-HKq/view?usp=sharing)
+This prototype demonstrates how research findings were translated into an AI-assisted grocery discovery experience focused on search, dietary filtering, and budget transparency.
 
 ## Two Parts to This Project
 
@@ -39,7 +46,7 @@ After the course ended, I built a working prototype to implement what the resear
 | Cultural food gaps | Catalog with halal, West African, and specialty items |
 | Card information missing | Product cards with dietary tags and store visible by default |
 | Search dependency | Natural-language product search using TF-IDF similarity |
-| Platform wasn't built for everyone | AI chatbot aware of dietary needs and cultural food queries |
+| Users with dietary and cultural needs faced discovery barriers | AI-assisted grocery discovery experience |
 
 This engineering extension was completed independently after the course concluded.
 
@@ -57,8 +64,7 @@ This engineering extension was completed independently after the course conclude
 - Product grid with real-time search → filter → results pulled from the API
 - Sidebar: dietary filter pills, price range slider, store selector, AI Picks toggle
 - Budget bar — live cost breakdown appears as items are added to cart
-- **AI chatbot** — * AI chat interface — supports an optional Claude-powered experience when an Anthropic API key is configured
-
+- **AI chat interface** — Supports an optional Claude-powered experience when an Anthropic API key is configured. The interface is designed for dietary, cultural, nutritional, and budget-based grocery discovery.
 ---
 
 ## Key Research Findings
@@ -81,8 +87,6 @@ This is a working research-driven prototype, not a production Instacart integrat
 
 ---
 
----
-
 ## Screenshots & Concept Preview
 
 ### AI-Assisted Grocery Discovery
@@ -98,6 +102,8 @@ This concept shows how users can ask natural-language grocery questions and rece
 <p align="center">
   <img src="screenshots/budget-transparency-desktop.png" width="700">
 </p>
+
+Research participants evaluated affordability using total delivered cost rather than item price alone. This design exposes delivery fees, taxes, tips, and estimated totals before checkout.
 
 ### Mobile Discovery Experience
 
