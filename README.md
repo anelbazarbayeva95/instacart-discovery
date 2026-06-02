@@ -12,24 +12,6 @@
 
 ---
 
-## 🎥 Interactive Demo
-
-> 7 of 8 participants in our study struggled the moment search was removed. Users with dietary and cultural needs had the most difficulty. This demo shows what a research-grounded solution looks like.
-
-**[![Watch Demo — Loom](https://img.shields.io/badge/▶%20Watch%20Demo-Loom-purple?style=for-the-badge&logo=loom)](https://loom.com)**
-*(add Loom link after recording)*
-
-**Try these prompts:**
-- `Find halal bread under $5`
-- `Build a vegetarian lunch under $10`
-- `Show low-sodium soup options`
-- `Find ingredients for West African cooking`
-
-<!-- Add Figma redesign screenshot below after exporting -->
-<!-- ![Figma Redesign](screenshots/figma-redesign.png) -->
-
----
-
 ## Two Parts to This Project
 
 ### Part 1 — The Research (Team, Pace University)
@@ -73,7 +55,7 @@ This extension was not part of the course. It represents my independent decision
 - Product grid with real-time search → filter → results pulled from the API
 - Sidebar: dietary filter pills, price range slider, store selector, AI Picks toggle
 - Budget bar — live cost breakdown appears as items are added to cart
-- **AI chatbot** — Claude-powered chat is available when an Anthropic API key is configured. Without the key, the core search, filtering, and budget features still run locally. When active, the assistant knows the full product catalog and can answer questions like *"what can I cook halal and gluten-free under $15?"*
+- **AI chatbot** — * AI chat interface — supports an optional Claude-powered experience when an Anthropic API key is configured
 
 ---
 
@@ -91,21 +73,43 @@ This extension was not part of the course. It represents my independent decision
 
 ---
 
-## Screenshots
-
-> Screenshots coming after local demo recording.
-
-- Search + dietary filters
-- Product cards with dietary tags
-- Budget transparency panel
-- AI chatbot demo
-- Figma redesign concept
-
----
-
 ## Prototype Status
 
 This is a working research-driven prototype, not a production Instacart integration. The backend search, filters, product catalog, and budget estimation are functional. The Claude-powered chat requires an Anthropic API key. Future improvements include stronger embeddings, deployed hosting, expanded product data, and AI-generated match explanations.
+
+---
+
+---
+
+## Screenshots & Concept Preview
+
+### AI-Assisted Grocery Discovery
+
+![AI Assistant Desktop](screenshots/ai-assistant-desktop.png)
+
+This concept shows how users can ask natural-language grocery questions and receive product recommendations grounded in dietary, cultural, and budget needs.
+
+### Budget Transparency
+
+![Budget Transparency Desktop](screenshots/budget-transparency-desktop.png)
+
+Research participants evaluated affordability based on total delivered cost, not item price alone. This screen exposes subtotal, delivery fee, tip, tax, and estimated total before checkout.
+
+### Mobile Discovery Experience
+
+![Mobile Discovery](screenshots/mobile-discovery.png)
+
+The mobile concept shows how search, dietary filters, product cards, and budget awareness translate to a smaller screen.
+
+### Prototype Overview
+
+![Prototype Overview](screenshots/prototype-overview.png)
+
+### Interactive Concept Preview
+
+This video demonstrates the intended AI Grocery Assistant experience as a high-fidelity concept preview. The backend search, filters, and budget estimator are implemented; full Claude-powered chat is planned as a future enhancement.
+
+[Watch AI Assistant Concept Preview](screenshots/ai-assistant-concept-preview.mov)
 
 ---
 
@@ -117,11 +121,11 @@ instacart-discovery/
 │   ├── main.py          # FastAPI app — 4 endpoints
 │   ├── search.py        # TF-IDF search engine
 │   └── budget.py        # Cost estimation with per-store fee logic
+│
 ├── data/
 │   ├── products.json    # 20-product catalog across 4 stores
-│   └── build_index.py   # Builds search index (run once)
-├── tests/
-│   └── test_api.py      # 16 tests
+│   └── build_index.py   # Builds search index
+│
 ├── frontend/
 │   ├── src/
 │   │   ├── App.jsx
@@ -130,14 +134,28 @@ instacart-discovery/
 │   │       ├── Sidebar.jsx
 │   │       ├── ProductGrid.jsx
 │   │       ├── BudgetBar.jsx
-│   │       └── ChatBot.jsx   # Claude API integration
+│   │       └── ChatBot.jsx
 │   └── package.json
+│
 ├── research/
-│   ├── FINDINGS.md                          # 8 findings with quotes + evidence
-│   ├── METHODOLOGY.md                       # Recruitment, sessions, analysis
-│   ├── Instacart_Usability_Study_Final.pdf  # Final presentation
-│   └── Grocery_Discovery_Prototype.html     # Interactive UI prototype
-└── render.yaml          # One-click Render deployment
+│   ├── FINDINGS.md
+│   ├── METHODOLOGY.md
+│   ├── Instacart_Usability_Study_Final.pdf
+│   └── Instacart_Usability_Study_Draft.pdf
+│
+├── screenshots/
+│   ├── ai-assistant-desktop.png
+│   ├── budget-transparency-desktop.png
+│   ├── mobile-discovery.png
+│   ├── prototype-overview.png
+│   └── ai-assistant-concept-preview.mov
+│
+├── tests/
+│   └── test_api.py      # 16 tests
+│
+├── requirements.txt
+├── render.yaml
+└── README.md
 ```
 
 ---
