@@ -5,6 +5,7 @@
 ![UX Research](https://img.shields.io/badge/UX%20Research-6C63FF)
 ![AI Discovery](https://img.shields.io/badge/AI%20Discovery-FF6B6B)
 ![Accessibility](https://img.shields.io/badge/Accessibility-WCAG-green)
+
 **UX Research → Findings → Figma Redesign → Working Prototype → Interactive AI Demo**
 
 > A usability study of 8 Instacart shoppers revealed that the platform creates barriers for users with dietary, cultural, and budget constraints. This repo documents the research — and the working product I built from its findings.
