@@ -1,7 +1,7 @@
-# Grocery Discovery — AI-Assisted Shopping
-**UX Research → Product Design → Full-Stack Engineering**
+# AI-Assisted Grocery Discovery
+**UX Research → Findings → Figma Redesign → Working Prototype → Interactive AI Demo**
 
-> A usability study of 8 Instacart shoppers revealed that the platform systematically fails users with dietary, cultural, and budget constraints. This repo documents the research — and the working product I built from its findings.
+> A usability study of 8 Instacart shoppers revealed that the platform creates barriers for users with dietary, cultural, and budget constraints. This repo documents the research — and the working product I built from its findings.
 
 | | |
 |---|---|
@@ -12,11 +12,29 @@
 
 ---
 
+## 🎥 Interactive Demo
+
+> 7 of 8 participants in our study struggled the moment search was removed. Users with dietary and cultural needs had the most difficulty. This demo shows what a research-grounded solution looks like.
+
+**[![Watch Demo — Loom](https://img.shields.io/badge/▶%20Watch%20Demo-Loom-purple?style=for-the-badge&logo=loom)](https://loom.com)**
+*(add Loom link after recording)*
+
+**Try these prompts:**
+- `Find halal bread under $5`
+- `Build a vegetarian lunch under $10`
+- `Show low-sodium soup options`
+- `Find ingredients for West African cooking`
+
+<!-- Add Figma redesign screenshot below after exporting -->
+<!-- ![Figma Redesign](screenshots/figma-redesign.png) -->
+
+---
+
 ## Two Parts to This Project
 
 ### Part 1 — The Research (Team, Pace University)
 
-A moderated usability study conducted with 8 participants across 40–50 minute Zoom sessions. Think-aloud protocol. Task 3 deliberately restricted search to expose browsing behaviour the platform's reliance on search normally hides.
+A moderated usability study conducted with 8 participants across 40–50 minute Zoom sessions. Think-aloud protocol. Task 3 deliberately restricted search to expose browsing behavior that the platform's reliance on search normally hides.
 
 **Course:** CS663 — Human Factors & Usability Metrics  
 **Deliverables:** Usability plan, session facilitation, thematic analysis, design recommendations, final presentation
@@ -36,7 +54,7 @@ After the course ended, I built a working prototype to implement what the resear
 | Budget opacity | Budget estimator — subtotal + delivery fee + tip + tax per store |
 | Cultural food gaps | Catalog with halal, West African, and specialty items |
 | Card information missing | Product cards with dietary tags and store visible by default |
-| Search dependency | Semantic search so browsing works without exact keyword match |
+| Search dependency | Natural-language product search using TF-IDF similarity |
 | Platform wasn't built for everyone | AI chatbot aware of dietary needs and cultural food queries |
 
 This extension was not part of the course. It represents my independent decision to take research findings and ship them as code.
@@ -46,7 +64,7 @@ This extension was not part of the course. It represents my independent decision
 ## What Was Built
 
 ### Backend — FastAPI + scikit-learn
-- **`api/search.py`** — TF-IDF semantic search with cosine similarity. Accepts natural language queries like "halal meals under $10" and returns ranked results
+- **`api/search.py`** — Natural-language product search using TF-IDF similarity with cosine ranking. Accepts queries like "halal meals under $10" and returns ranked results
 - **`api/budget.py`** — Real cost estimation with per-store delivery fee structures, free delivery thresholds, tip and tax calculation. Directly addresses the research finding that item price alone is misleading
 - **`api/main.py`** — 4 REST endpoints, CORS enabled, fully documented via FastAPI's `/docs`
 - **16 tests passing** — search accuracy, filter logic, budget math
@@ -67,9 +85,27 @@ This extension was not part of the course. It represents my independent decision
 
 **Most users never opened a product detail page.** The card is the product page — but halal badges, gluten-free labels, and nutritional info weren't on it.
 
-**One participant searched for Ghanaian butter bread across three stores.** No results. Accepted Hawaiian rolls as a substitute. Planned a separate in-person trip. This isn't an edge case — it's a design failure.
+**One participant searched for Ghanaian butter bread across three stores.** No results. Accepted Hawaiian rolls as a substitute. Planned a separate in-person trip. This isn't an edge case — it's a design gap.
 
 **Users evaluate budget as total delivered cost.** Item price without fees, tip, and tax is misleading. One participant questioned whether items were truly under budget before adding them.
+
+---
+
+## Screenshots
+
+> Screenshots coming after local demo recording.
+
+- Search + dietary filters
+- Product cards with dietary tags
+- Budget transparency panel
+- AI chatbot demo
+- Figma redesign concept
+
+---
+
+## Prototype Status
+
+This is a working research-driven prototype, not a production Instacart integration. The backend search, filters, product catalog, and budget estimation are functional. The Claude-powered chat requires an Anthropic API key. Future improvements include stronger embeddings, deployed hosting, expanded product data, and AI-generated match explanations.
 
 ---
 
@@ -79,7 +115,7 @@ This extension was not part of the course. It represents my independent decision
 instacart-discovery/
 ├── api/
 │   ├── main.py          # FastAPI app — 4 endpoints
-│   ├── search.py        # TF-IDF semantic search engine
+│   ├── search.py        # TF-IDF search engine
 │   └── budget.py        # Cost estimation with per-store fee logic
 ├── data/
 │   ├── products.json    # 20-product catalog across 4 stores
@@ -99,8 +135,8 @@ instacart-discovery/
 ├── research/
 │   ├── FINDINGS.md                          # 8 findings with quotes + evidence
 │   ├── METHODOLOGY.md                       # Recruitment, sessions, analysis
-│   ├── Instacart_Usability_Study_Final.pdf # Final presentation
-│   └── Instacart_Usability_Study_Draft.pdf # Working draft
+│   ├── Instacart_Usability_Study_Final.pdf  # Final presentation
+│   └── Grocery_Discovery_Prototype.html     # Interactive UI prototype
 └── render.yaml          # One-click Render deployment
 ```
 
@@ -128,7 +164,8 @@ npm run dev
 ### AI Chatbot setup
 ```bash
 # frontend/.env.local
-VITE_API_URL=    # leave blank for local dev
+VITE_API_URL=                              # leave blank for local dev
+VITE_ANTHROPIC_API_KEY=your_api_key_here  # get from console.anthropic.com
 ```
 Claude-powered chat is available when an Anthropic API key is configured. Without it, all other features — search, filters, budget — work fully. For production, proxy the API call through your backend to keep the key server-side.
 
@@ -145,7 +182,7 @@ pytest tests/ -v
 |---|---|---|
 | GET | `/health` | Liveness check |
 | GET | `/products` | Full catalog |
-| GET | `/products/search` | Semantic search + dietary / store / price filters |
+| GET | `/products/search` | TF-IDF search + dietary / store / price filters |
 | POST | `/budget` | Full cost estimate with per-store fee structure |
 
 **Search example:**
