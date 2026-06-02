@@ -12,11 +12,7 @@
 
 ---
 ## 🎥 Interactive Concept Preview
-
-This 30-second prototype demonstrates the intended AI-assisted grocery discovery experience.
-
-📹 Concept Preview Video:
-[screenshots/ai-assistant-concept-preview.mov](screenshots/ai-assistant-concept-preview.mov)
+[Watch the 30-second concept preview](https://drive.google.com/file/d/1tUpi1GYBu3C0GgBaXUeNgv8Lk2hF-HKq/view?usp=sharing)
 
 ## Two Parts to This Project
 
