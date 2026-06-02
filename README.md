@@ -11,6 +11,13 @@
 | **Stack** | Python · FastAPI · scikit-learn · React 18 · Vite · Claude API |
 
 ---
+## 🎥 Interactive Concept Preview
+
+This 30-second prototype demonstrates the intended AI-assisted grocery discovery experience, inspired by findings from a usability study of 8 Instacart shoppers.
+
+⚠️ This is a high-fidelity concept prototype. Backend search, filtering, and budget estimation are implemented. Full Claude-powered conversational functionality is planned as a future enhancement.
+
+[Watch AI Assistant Concept Preview](screenshots/ai-assistant-concept-preview.mov)
 
 ## Two Parts to This Project
 
@@ -85,25 +92,29 @@ This is a working research-driven prototype, not a production Instacart integrat
 
 ### AI-Assisted Grocery Discovery
 
-![AI Assistant Desktop](screenshots/ai-assistant-desktop.png)
+<p align="center">
+  <img src="screenshots/ai-assistant-desktop.png" width="700">
+</p>
 
 This concept shows how users can ask natural-language grocery questions and receive product recommendations grounded in dietary, cultural, and budget needs.
 
 ### Budget Transparency
 
-![Budget Transparency Desktop](screenshots/budget-transparency-desktop.png)
-
-Research participants evaluated affordability based on total delivered cost, not item price alone. This screen exposes subtotal, delivery fee, tip, tax, and estimated total before checkout.
+<p align="center">
+  <img src="screenshots/budget-transparency-desktop.png" width="700">
+</p>
 
 ### Mobile Discovery Experience
 
-![Mobile Discovery](screenshots/mobile-discovery.png)
-
-The mobile concept shows how search, dietary filters, product cards, and budget awareness translate to a smaller screen.
+<p align="center">
+  <img src="screenshots/mobile-discovery.png" width="320">
+</p>
 
 ### Prototype Overview
 
-![Prototype Overview](screenshots/prototype-overview.png)
+<p align="center">
+  <img src="screenshots/prototype-overview.png" width="700">
+</p>
 
 ### Interactive Concept Preview
 
