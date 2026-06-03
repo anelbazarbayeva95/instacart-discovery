@@ -1,20 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import styles from './ChatBot.module.css'
 
-const SYSTEM_PROMPT = (catalog) => `You are a friendly grocery shopping AI assistant embedded in "Grocery Discovery" — a portfolio project by Anel Bazarbayeva, a software engineer and UX researcher at Pace University.
-
-Your product catalog:
-${JSON.stringify(catalog.map(p => ({ name: p.name, store: p.store, price: '$' + p.price, tags: p.tags })))}
-
-Your personality: warm, concise, helpful. Specialise in dietary needs (halal, vegan, gluten-free), meal planning, and budget transparency.
-
-When recommending products, mention the store and price. Keep responses to 2-4 sentences unless asked for a recipe or meal plan.
-
-When you suggest specific products, append this JSON block at the END of your message (no other location):
-PRODUCTS: [{"name":"Product Name","price":0.00,"emoji":"🍗","store":"StoreName"}]
-
-Only include PRODUCTS if you're recommending specific items. Always end the PRODUCTS block on its own line.`
-
 const QUICK_REPLIES = [
   'Halal meals under $10',
   'Vegan protein options',
@@ -52,27 +38,20 @@ export default function ChatBot({ onClose, apiBase, products }) {
     setLoading(true)
 
     try {
-      const res = await fetch('https://api.anthropic.com/v1/messages', {
+      const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: 1000,
-          system: SYSTEM_PROMPT(products),
-          messages: newHistory,
-        }),
+        body: JSON.stringify({ messages: newHistory }),
       })
       const data = await res.json()
+      const raw = data.content
 
-      if (data.error) throw new Error(data.error.message)
-
-      const raw = data.content[0].text
       let replyText = raw
       let replyProducts = null
 
       const match = raw.match(/PRODUCTS:\s*(\[[\s\S]*?\])/m)
       if (match) {
-        try { replyProducts = JSON.parse(match[1]) } catch {}
+        try { replyProducts = JSON.parse(match[1]) } catch { }
         replyText = raw.replace(/PRODUCTS:[\s\S]*$/m, '').trim()
       }
 

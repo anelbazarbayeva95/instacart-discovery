@@ -7,3 +7,5 @@ pytest>=8.0.0
 # Upgrade for production semantic search:
 # sentence-transformers>=2.6.0
 # faiss-cpu>=1.8.0
+echo "anthropic>=0.25.0" >> requirements.txt
+anthropic>=0.25.0

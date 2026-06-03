@@ -72,3 +72,34 @@ class BudgetRequest(BaseModel):
 def estimate_budget(req: BudgetRequest):
     items = [{"price": i.price, "quantity": i.quantity} for i in req.items]
     return estimate_total(items, req.store)
+
+class ChatRequest(BaseModel):
+    messages: list[dict]
+    store: str = "ShopRite"
+
+@app.post("/chat")
+async def chat(req: ChatRequest):
+    import anthropic
+    import os
+    import json
+
+    client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
+
+    with open("data/products.json") as f:
+        products = json.load(f)
+
+    system = f"""You are a friendly AI grocery assistant for Grocery Discovery, 
+a portfolio project by Anel Bazarbayeva built from UX research on Instacart.
+
+Product catalog: {json.dumps([{"name":p["name"],"store":p["store"],"price":"$"+str(p["price"]),"tags":p["tags"]} for p in products])}
+
+Keep responses to 2-3 sentences. Mention store and price when recommending products.
+When suggesting products end with: PRODUCTS:[{{"name":"...","price":0.00,"emoji":"...","store":"..."}}]"""
+
+    response = client.messages.create(
+        model="claude-haiku-4-5-20251001",
+        max_tokens=1000,
+        system=system,
+        messages=req.messages
+    )
+    return {"content": response.content[0].text}
