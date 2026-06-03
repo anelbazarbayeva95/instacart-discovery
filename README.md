@@ -1,10 +1,10 @@
 # AI-Assisted Grocery Discovery
-![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
-![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)
-![UX Research](https://img.shields.io/badge/UX%20Research-6C63FF)
-![AI Discovery](https://img.shields.io/badge/AI%20Discovery-FF6B6B)
-![Accessibility](https://img.shields.io/badge/Accessibility-WCAG-green)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![UX Research](https://img.shields.io/badge/UX%20Research-6C63FF?style=flat-square&logoColor=white)
+![AI Discovery](https://img.shields.io/badge/AI%20Discovery-FF6B6B?style=flat-square&logoColor=white)
+![Tests](https://img.shields.io/badge/Tests-16%20passing-22c55e?style=flat-square)
 
 **UX Research → Findings → Figma Redesign → Working Prototype → Interactive AI Demo**
 
