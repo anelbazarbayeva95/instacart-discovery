@@ -170,14 +170,6 @@ This concept shows how users can ask natural-language grocery questions and rece
 
 Research participants evaluated affordability using total delivered cost rather than item price alone. This design exposes delivery fees, taxes, tips, and estimated totals before checkout.
 
-### Mobile Discovery Experience
-
-<p align="center">
-  <img src="screenshots/mobile-discovery.png" width="180">
-</p> 
-
-The mobile concept adapts conversational product discovery, dietary filtering, and budget awareness for a grocery shopping workflow on smaller screens.
-
 ---
 
 ## Project Structure
@@ -213,9 +205,7 @@ instacart-discovery/
 ├── screenshots/
 │   ├── ai-assistant-desktop.png
 │   ├── budget-transparency-desktop.png
-│   ├── mobile-discovery.png
 │   ├── prototype-overview.png
-│   └── ai-assistant-concept-preview.mov
 │
 ├── tests/
 │   └── test_api.py      # 16 tests
@@ -250,7 +240,7 @@ npm run dev
 ```bash
 # frontend/.env.local
 VITE_API_URL=                              # leave blank for local dev
-VITE_ANTHROPIC_API_KEY=your_api_key_here  # get from console.anthropic.com
+ANTHROPIC_API_KEY=your_api_key_here  # set in terminal before running uvicorn
 ```
 Claude-powered chat is available when an Anthropic API key is configured. Without it, all other features — search, filters, budget — work fully. For production, proxy the API call through your backend to keep the key server-side.
 
