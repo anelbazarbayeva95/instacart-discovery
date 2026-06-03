@@ -19,7 +19,7 @@
 
 ---
 
-## 🎥 Interactive Concept Preview
+## Interactive Concept Preview
 
 [![Watch Demo](https://cdn.loom.com/sessions/thumbnails/394e772834dc44c5ab27df2f98e98c62-with-play.gif)](https://www.loom.com/share/394e772834dc44c5ab27df2f98e98c62)
 
