@@ -21,8 +21,9 @@
 
 ## 🎥 Interactive Concept Preview
 
-[Watch the 30-second concept preview](https://drive.google.com/file/d/1tUpi1GYBu3C0GgBaXUeNgv8Lk2hF-HKq/view?usp=sharing)
+[![Watch Demo](https://cdn.loom.com/sessions/thumbnails/394e772834dc44c5ab27df2f98e98c62-with-play.gif)](https://www.loom.com/share/394e772834dc44c5ab27df2f98e98c62)
 
+[![Watch Demo — Loom](https://img.shields.io/badge/▶%20Watch%20Demo-Loom-purple?style=for-the-badge&logo=loom)](https://www.loom.com/share/394e772834dc44c5ab27df2f98e98c62)
 This prototype demonstrates how research findings were translated into an AI-assisted grocery discovery experience focused on search, dietary filtering, and budget transparency.
 
 ## Two Parts to This Project
