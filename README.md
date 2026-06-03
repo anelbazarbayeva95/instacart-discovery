@@ -73,15 +73,75 @@ This engineering extension was completed independently after the course conclude
 
 ## Key Research Findings
 
-**8/8 users chose a familiar store before the page finished loading.** Store selection happened in their heads, not on the screen.
+<details>
+<summary><strong>01 — 8/8 users chose a familiar store before the page finished loading</strong></summary>
+<br>
 
-**0 users found a price filter.** 3 gave up on dietary filters. Only 1 store had a gluten-free option.
+Store selection happened in their heads, not on the screen. Nobody used the homepage store cards to compare. Trust drives store choice — not price or availability.
 
-**Most users never opened a product detail page.** The card is the product page — but halal badges, gluten-free labels, and nutritional info weren't on it.
+> *"If it's cereal or spices, I'd try a deal. But for salmon or shrimp — no. I'm getting it from a place I feel comfortable."*
 
-**One participant searched for Ghanaian butter bread across three stores.** No results. Accepted Hawaiian rolls as a substitute. Planned a separate in-person trip. This isn't an edge case — it's a design gap.
+**Design implication:** Any nudge toward new stores must address the trust gap, not just highlight price.
 
-**Users evaluate budget as total delivered cost.** Item price without fees, tip, and tax is misleading. One participant questioned whether items were truly under budget before adding them.
+</details>
+
+<details>
+<summary><strong>02 — 0 users found a price filter. 3 gave up on dietary filters</strong></summary>
+<br>
+
+Only 1 store had a gluten-free filter. "Grain Free" vs "Gluten Free" inconsistency eroded trust. "Shop by Preference" was buried — no participant found it unprompted.
+
+> *"Not gonna lie, losing a little bit of hope."*
+
+**Design implication:** Dietary and price filters should be standardized across all stores and surfaced at the top of every category page.
+
+</details>
+
+<details>
+<summary><strong>03 — Most users never opened a product detail page</strong></summary>
+<br>
+
+The card is the product page. Users made purchase decisions from the thumbnail alone. Missing from cards: halal badges, gluten-free labels, nutritional highlights, certification info.
+
+> *"Why don't they have a label for low sodium?"*
+
+**Design implication:** Key dietary and nutritional signals must live on the card, not behind a click.
+
+</details>
+
+<details>
+<summary><strong>04 — One participant searched for Ghanaian butter bread across three stores. No results</strong></summary>
+<br>
+
+She accepted Hawaiian rolls as a substitute and planned a separate in-person trip. One halal shopper could not verify certification at Target. These aren't edge cases — they're trust barriers blocking purchase.
+
+**Design implication:** Halal and kosher certification data, cultural food synonyms, and specialty store partnerships are not nice-to-haves.
+
+</details>
+
+<details>
+<summary><strong>05 — Users evaluate budget as total delivered cost, not item price</strong></summary>
+<br>
+
+One participant questioned whether items were truly under budget after taxes, delivery fees, and tip. One found cheaper oil elsewhere but paused — estimated delivery fees would cancel the savings.
+
+**Design implication:** Show estimated total cost alongside item prices during constrained shopping.
+
+</details>
+
+<details>
+<summary><strong>06 — Search was so dominant that browsing failures stayed hidden until Task 3</strong></summary>
+<br>
+
+Task 3 deliberately restricted search. Verbal frustration and false negatives immediately followed. Every browsing weakness surfaced at once.
+
+> *"I'm lost, because the quickest way for me to search that information… I need the search bar."*
+
+**Design implication:** Category browsing needs to function as a real fallback, not a dead end.
+
+</details>
+
+→ All 8 findings with full evidence and quotes: [`research/FINDINGS.md`](research/FINDINGS.md)
 
 ---
 
