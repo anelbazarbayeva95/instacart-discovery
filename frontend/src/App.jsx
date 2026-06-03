@@ -16,8 +16,10 @@ export default function App() {
   const [store, setStore] = useState(null)
   const [maxPrice, setMaxPrice] = useState(15)
   const [cart, setCart] = useState({})
+  const [cartOpen, setCartOpen] = useState(false)
   const [chatOpen, setChatOpen] = useState(false)
   const [aiMode, setAiMode] = useState(false)
+  const [cartProducts, setCartProducts] = useState({})
 
   useEffect(() => {
     fetchProducts()
@@ -32,12 +34,10 @@ export default function App() {
       if (store) params.set('store', store)
       params.set('max_price', maxPrice)
       params.set('limit', 20)
-
       const res = await fetch(`${API}/products/search?${params}`)
       const data = await res.json()
       setProducts(data.results || [])
     } catch {
-      // fallback — show nothing, not crash
       setProducts([])
     } finally {
       setLoading(false)
@@ -51,20 +51,23 @@ export default function App() {
   }
 
   function addToCart(product) {
-    setCart(prev => ({ ...prev, [product.id]: (prev[product.id] || 0) + 1 }))
+    const key = String(product.id)
+    setCart(prev => ({ ...prev, [key]: (prev[key] || 0) + 1 }))
+    setCartProducts(prev => ({ ...prev, [key]: product }))
   }
 
   function removeFromCart(id) {
+    const key = String(id)
     setCart(prev => {
       const next = { ...prev }
-      if (next[id] > 1) next[id] -= 1
-      else delete next[id]
+      if (next[key] > 1) next[key] -= 1
+      else delete next[key]
       return next
     })
   }
 
   const cartItems = Object.entries(cart).map(([id, qty]) => {
-    const p = products.find(x => x.id === parseInt(id))
+    const p = cartProducts[id]
     return p ? { ...p, quantity: qty } : null
   }).filter(Boolean)
 
@@ -76,7 +79,7 @@ export default function App() {
         query={query}
         onQuery={setQuery}
         cartCount={cartCount}
-        onCartClick={() => setChatOpen(true)}
+        onCartClick={() => setCartOpen(o => !o)}
       />
 
       <div className={styles.layout}>
@@ -90,7 +93,6 @@ export default function App() {
           aiMode={aiMode}
           onAiMode={setAiMode}
         />
-
         <main className={styles.main}>
           <ProductGrid
             products={products}
@@ -105,7 +107,87 @@ export default function App() {
         </main>
       </div>
 
-      {cartItems.length > 0 && (
+      {/* Cart Panel */}
+      {cartOpen && (
+        <div style={{
+          position:'fixed',top:0,right:0,width:380,height:'100vh',
+          background:'#fff',borderLeft:'1px solid #E6E8EB',
+          zIndex:300,display:'flex',flexDirection:'column',
+          boxShadow:'-8px 0 32px rgba(0,0,0,0.1)'
+        }}>
+          <div style={{
+            padding:'20px 24px',borderBottom:'1px solid #E6E8EB',
+            display:'flex',justifyContent:'space-between',alignItems:'center'
+          }}>
+            <span style={{fontSize:18,fontWeight:700,fontFamily:'DM Sans,sans-serif'}}>
+              Your cart ({cartCount})
+            </span>
+            <button
+              onClick={() => setCartOpen(false)}
+              style={{fontSize:20,background:'none',border:'none',cursor:'pointer',color:'#8F939B'}}
+            >✕</button>
+          </div>
+
+          <div style={{flex:1,overflowY:'auto',padding:'16px 24px'}}>
+            {cartItems.length === 0 ? (
+              <p style={{color:'#8F939B',textAlign:'center',marginTop:40,fontFamily:'DM Sans,sans-serif'}}>
+                Your cart is empty
+              </p>
+            ) : cartItems.map(item => (
+              <div key={item.id} style={{
+                display:'flex',alignItems:'center',gap:12,
+                padding:'12px 0',borderBottom:'1px solid #E6E8EB'
+              }}>
+                <span style={{fontSize:32}}>{item.emoji || '🛒'}</span>
+                <div style={{flex:1,minWidth:0}}>
+                  <div style={{fontWeight:600,fontSize:14,fontFamily:'DM Sans,sans-serif'}}>
+                    {item.name}
+                  </div>
+                  <div style={{fontSize:12,color:'#8F939B',fontFamily:'DM Sans,sans-serif'}}>
+                    {item.store}
+                  </div>
+                </div>
+                <div style={{display:'flex',alignItems:'center',gap:8}}>
+                  <button
+                    onClick={() => removeFromCart(item.id)}
+                    style={{
+                      width:24,height:24,borderRadius:'50%',
+                      border:'1px solid #E6E8EB',background:'#fff',
+                      cursor:'pointer',fontSize:16
+                    }}
+                  >−</button>
+                  <span style={{fontWeight:600,fontSize:14,minWidth:16,textAlign:'center'}}>
+                    {item.quantity}
+                  </span>
+                  <button
+                    onClick={() => addToCart(item)}
+                    style={{
+                      width:24,height:24,borderRadius:'50%',
+                      background:'#108910',border:'none',
+                      color:'#fff',cursor:'pointer',fontSize:16
+                    }}
+                  >+</button>
+                </div>
+                <span style={{
+                  fontWeight:700,color:'#108910',fontSize:14,
+                  minWidth:52,textAlign:'right'
+                }}>
+                  ${(item.price * item.quantity).toFixed(2)}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          {cartItems.length > 0 && (
+            <div style={{borderTop:'1px solid #E6E8EB'}}>
+              <BudgetBar items={cartItems} store={store || 'ShopRite'} apiBase={API} />
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Budget bar — only when cart panel is closed */}
+      {cartItems.length > 0 && !cartOpen && (
         <BudgetBar
           items={cartItems}
           store={store || 'ShopRite'}
@@ -126,6 +208,7 @@ export default function App() {
           onClose={() => setChatOpen(false)}
           apiBase={API}
           products={products}
+          onAdd={addToCart}
         />
       )}
     </div>

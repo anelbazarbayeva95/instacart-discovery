@@ -27,3 +27,7 @@ body {
 
 button { font-family: var(--font); cursor: pointer; }
 input { font-family: var(--font); }
+
+body {
+  min-width: 1024px;
+}

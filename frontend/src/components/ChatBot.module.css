@@ -206,3 +206,23 @@
 
 .sendBtn:hover { background: var(--g-mid); }
 .sendBtn:disabled { background: var(--gray3); cursor: not-allowed; }
+
+.addFromChat {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--g);
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.12s;
+}
+
+.addFromChat:hover {
+  background: var(--g-mid);
+}

@@ -8,7 +8,7 @@ const QUICK_REPLIES = [
   'Cheapest gluten-free items',
 ]
 
-export default function ChatBot({ onClose, apiBase, products }) {
+export default function ChatBot({ onClose, apiBase, products, onAdd }) {
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
@@ -90,10 +90,24 @@ export default function ChatBot({ onClose, apiBase, products }) {
                 <div className={styles.pInfo}>
                   <div className={styles.pName}>{p.name}</div>
                   <div className={styles.pStore}>{p.store}</div>
-                </div>
-                <span className={styles.pPrice}>${p.price.toFixed(2)}</span>
-              </div>
-            ))}
+                  </div>
+                  <span className={styles.pPrice}>${p.price.toFixed(2)}</span>
+                  <button
+                  className={styles.addFromChat}
+                  onClick={() => onAdd && onAdd({
+                    id: `chat-${p.name}`,
+                    name: p.name,
+                    store: p.store,
+                    price: p.price,
+                    emoji: p.emoji,
+                    tags: [],
+                  })}
+                  aria-label={`Add ${p.name} to cart`}
+                  >
+                    +
+                    </button>
+                    </div>
+                  ))}
           </div>
         ))}
         {loading && (

@@ -57,6 +57,7 @@ class SearchEngine:
             results = [
                 {**p, "similarity_score": round(float(s), 4)}
                 for p, s in ranked[:top_k]
+                if s > 0.0
             ]
         else:
             results = [{**p, "similarity_score": 1.0} for p in candidates[:top_k]]
